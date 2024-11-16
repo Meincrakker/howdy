@@ -56,12 +56,21 @@ You will need to do some additional configuration steps. Please read the [ArchWi
 
 _Maintainer: [@luyatshimbalanga](https://github.com/luyatshimbalanga)_
 
-The `howdy` package is available as a [Fedora COPR repository](https://copr.fedorainfracloud.org/coprs/principis/howdy/), install it by simply executing the following commands in a terminal:
+The `howdy` package is available as a [Fedora COPR repository](https://copr.fedorainfracloud.org/coprs/principis/howdy/). Install it by simply executing the following commands in a terminal:
 
 ```
 sudo dnf copr enable principis/howdy
 sudo dnf --refresh install howdy
 ```
+
+*Note:* Fedora 41 [removed support for Python2](https://fedoraproject.org/wiki/Changes/RetirePython2.7), but at this point in time Howdy still depends on it. If the install fails, you can fix this error by installing the beta Repository and removing the release version:
+```
+sudo dnf copr remove principis/howdy
+sudo dnf copr enable principis/howdy-beta
+sudo dnf --refresh install howdy
+```
+
+
 
 See the link to the COPR repository for detailed configuration steps.
 
